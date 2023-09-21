@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liloo SM - Framework HTML, CSS e Javascript</title>
+    <link rel="stylesheet" href="./sm/v1.0/css/style.css">
+</head>
+<style>
+    .copiado {
+        display: none;
+        background-color: #00750a;
+        padding: 10px 21px;
+        border-radius: 100px;
+        position: fixed;
+        top: 25px;
+        right: 25px;
+    }
+</style>
+
+<body>
+
+    <header style="background-color: #1a1a1a;">
+        <div container sm>
+            <h1>Liloo SM</h1>
+            <h2>Framework HTML, CSS e JS</h2>
+            <p>Simplista e minimalista (SM) para auxiliar na construção de estruturas HTML de forma absurdamente rápida
+            </p>
+        </div>
+        <p class="copiado">Copiado</p>
+        <div grid>
+            <div>
+                <h3>CSS</h3>
+                <div group input>
+                    <input id="link-css" type="text" value="https://liloo.com.br/liloosm/sm/v1.0/css/style.css">
+                    <button onclick="clipboard('link-css')">Copy</button>
+                </div>
+            </div>
+            <div>
+                <h3>JS</h3>
+                <div group input>
+                    <input id="link-js" type="text" value="https://liloo.com.br/liloosm/sm/v1.0/js/lxm.js">
+                    <button onclick="clipboard('link-js')">Copy</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script src="./sm/v1.0/js/lxm.js"></script>
+    <script>
+        function clipboard(el) {
+            let content = document.getElementById(el)
+            content.select()
+            document.execCommand('copy')
+            content.blur()
+            let cop = document.querySelector(".copiado")
+            cop.style.display = "block"
+            setTimeout(function () {
+                cop.style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
