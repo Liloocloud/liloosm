@@ -22,6 +22,27 @@ Cole o link JS antes do fechamento da tag ```<body>```
 - [Dark Mode](#dark-mode)
 
 
+<table>
+  <tr>
+    <th>Coluna 1</th>
+    <th>Coluna 2</th>
+    <th>Coluna 3</th>
+  </tr>
+  <tr>
+    <td>Valor 1A</td>
+    <td>Valor 2A</td>
+    <td>Valor 3A</td>
+  </tr>
+  <tr>
+    <td>Valor 1B</td>
+    <td>Valor 2B</td>
+    <td>Valor 3B</td>
+  </tr>
+</table>
+
+
+
+
 #### Accordion
 ```html
 <div accordion>
