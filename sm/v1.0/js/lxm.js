@@ -112,6 +112,12 @@ modalSelect.forEach(function(el) {
                 modal.classList.remove("show")
         })
         
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && modal.classList.contains("show")) {
+                modal.classList.remove("show")
+            }
+        });
+
         window.addEventListener("click", (event) => {
             if (event.target == modal) {
                 modal.classList.remove("show")
@@ -121,6 +127,62 @@ modalSelect.forEach(function(el) {
     })
 })
 
+// Datepicker
+const datepickerInput = document.getElementById("datepicker");
+const calendar = document.getElementById("calendar");
+
+datepickerInput.addEventListener("click", function() {
+    calendar.classList.toggle("active");
+});
+
+document.addEventListener("click", function(event) {
+    if (!datepickerInput.contains(event.target) && !calendar.contains(event.target)) {
+        calendar.classList.remove("active");
+    }
+});
+
+function updateDatepicker(date) {
+    // Atualize o valor do input com a data selecionada
+    datepickerInput.value = formatDate(date);
+}
+
+function formatDate(date) {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    return date.toLocaleDateString(undefined, options);
+}
+
+// Crie o calendário
+const today = new Date();
+const currentMonth = today.getMonth();
+const currentYear = today.getFullYear();
+const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+function createCalendar() {
+    const calendarDates = [];
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(currentYear, currentMonth, day);
+        calendarDates.push(date);
+    }
+
+    const calendarHtml = calendarDates.map((date) => {
+        return `<div class="calendar-date" data-date="${date.toISOString()}">${date.getDate()}</div>`;
+    }).join("");
+
+    calendar.innerHTML = calendarHtml;
+
+    const calendarDatesElements = calendar.querySelectorAll(".calendar-date");
+
+    calendarDatesElements.forEach((element) => {
+        element.addEventListener("click", function() {
+            const selectedDate = new Date(this.getAttribute("data-date"));
+            updateDatepicker(selectedDate);
+            calendar.classList.remove("active");
+        });
+    });
+}
+
+createCalendar();
 
 
 
