@@ -15,32 +15,12 @@ Cole o link JS antes do fechamento da tag ```<body>```
 
 ## Componentes
 - [Accordion](#accordion)
+- [Modal](#modal)
 - [Buttons](#buttons)
 - [Container](#container)
 - [Grid](#grid)
 - [Totop](#to-top)
 - [Dark Mode](#dark-mode)
-
-
-<table>
-  <tr>
-    <th>Coluna 1</th>
-    <th>Coluna 2</th>
-    <th>Coluna 3</th>
-  </tr>
-  <tr>
-    <td>Valor 1A</td>
-    <td>Valor 2A</td>
-    <td>Valor 3A</td>
-  </tr>
-  <tr>
-    <td>Valor 1B</td>
-    <td>Valor 2B</td>
-    <td>Valor 3B</td>
-  </tr>
-</table>
-
-
 
 
 #### Accordion
@@ -74,6 +54,44 @@ Cole o link JS antes do fechamento da tag ```<body>```
     </div>
 </div>
 ```
+
+#### Modal
+Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conteúdo e rodapé. Já a segunda opção é direta e mais simples
+
+- Primeira exemplo
+```html
+<button data-modal="primeira">Abrir Modal</button>
+<div modal="primeira">
+    <div>
+        <span close>&times;</span>
+        <div header>
+            <h2>Primeira</h2>
+        </div>
+        <div content>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque libero ad facilis? Vitae odit quo illum reprehenderit, ducimus earum tempore suscipit tempora, sapiente sed nam repellat et commodi, ex maiores. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi veniam quis atque hic labore quia eius sit, nam iure dolores cupiditate facere cum quidem repudiandae fugiat odit ducimus sunt quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi pariatur necessitatibus! Enim, ullam commodi voluptates neque adipisci praesentium quisquam voluptatibus illum facilis consectetur consequuntur earum nobis? Repudiandae, fuga aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis natus reiciendis accusamus minima molestiae, voluptatem aperiam tenetur veniam veritatis, voluptatum iure, illum molestias quidem sapiente! Iure numquam illum praesentium ut!
+            </p>
+        </div>
+        <div footer>
+            <button>Salvar</button>
+        </div>  
+    </div>
+</div>
+```
+- Segundo exemplo
+```html
+<button data-modal="segunda">Abrir Modal</button>
+<div modal="segunda">
+    <div>
+        <span close>&times;</span>
+        <h2>Meu Modal 2</h2>
+        <p>Este é um exemplo de modal simples.</p>
+    </div>
+</div>
+```
+
+
+
 
 #### Buttons
 ```html
