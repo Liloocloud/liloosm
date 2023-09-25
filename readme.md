@@ -89,9 +89,20 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
     </div>
 </div>
 ```
-
-
-
+### Header
+```html
+<header id="topo">
+    <div data-src="{{ BASE_UPLOADS }}site/future.jpg"></div>
+    <div container xsm>
+        <h1>Seu site completo com a LilooSM</h1>
+        <p>Desempenho e qualidade com regras SEO implementadas. Você foca no resultado e nós na solução. Entre em contato conosco para maiores detalhes</p>
+        <div>
+            <a button lg href="#" button>Fale Conosco</a>
+            <a button lg out href="#" button>Mais informações</a>
+        </div>
+    </div>
+</header>
+```
 
 ### Buttons
 ```html
