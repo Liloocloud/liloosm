@@ -8,7 +8,7 @@ Acesse <a href="https://liloo.com.br/liloosm/" target="_blank">Liloo SM Site Ofi
 Cole o link CSS antes do fechamento da tag ```<head>```
 <code>https://liloo.com.br/liloosm/sm/v1.0/css/style.css</code>
 
-Cole o link JS antes do fechamento da tag <body>
+Cole o link JS antes do fechamento da tag ```<body>```
 <code>https://liloo.com.br/liloosm/sm/v1.0/js/lxm.js</code>
 
 ## Exemplo
@@ -67,8 +67,6 @@ Cole o link JS antes do fechamento da tag <body>
 
 #### Grid
 - A largura das div's filhas serão automáticas ```<div grid>```
-
-
 ```html
 <div grid>
     <div>
@@ -95,6 +93,17 @@ Cole o link JS antes do fechamento da tag <body>
 </div>
 ```
 
+#### To Top
+Basta colocar o elemento abaixo e já estará funcionando
+```html
+<button totop></button>
+```
+
+#### Dark mode
+Basta colocar o elemento abaixo e já estará funcionando incluindo os ícones "moon" e "sun" do framework fontawesome
+```html
+<button darkmode></button>
+```
 
 
 
