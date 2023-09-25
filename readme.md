@@ -5,7 +5,7 @@ HTML, CSS e JS framework simplista e minimalista (SM) para auxiliar na construç
 ## Instalação
 Acesse <a href="https://liloo.com.br/liloosm/" target="_blank">Liloo SM Site Oficial</a>
 
-Cole o link CSS antes do fechamento da tag <head>
+Cole o link CSS antes do fechamento da tag ```<head>```
 <code>https://liloo.com.br/liloosm/sm/v1.0/css/style.css</code>
 
 Cole o link JS antes do fechamento da tag <body>
@@ -15,7 +15,7 @@ Cole o link JS antes do fechamento da tag <body>
 
 ## Componentes
 
-#### Accordion
+#### Accordion (Acordeom)
 ```html
 <div accordion>
     <div>
@@ -46,3 +46,56 @@ Cole o link JS antes do fechamento da tag <body>
     </div>
 </div>
 ```
+
+#### Buttons (Botões)
+```html
+<button xsm>button xsm</button>
+<button sm>button sm</button>
+<button teal-100>button sm</button>
+<button md>button sm</button>
+<button lg>button sm</button>
+<button xlg>button sm</button>
+```
+
+#### Container
+```html
+<div container xsm blue-100>
+    <h2>container xsm blue-100</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore corrupti sequi cum distinctio earum? Magnam numquam, quam praesentium tempore optio nam a culpa fuga similique pariatur aspernatur architecto, eos cumque.</p>   
+</div>
+```
+
+#### Grid
+- A largura das div's filhas serão automáticas ```<div grid>```
+
+
+```html
+<div grid>
+    <div>
+        <div card>
+            <h2>Novo Modelo</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem tenetur, quidem, dolorem explicabo quo eaque illum rem nisi, placeat error repellendus natus iste quos libero delectus. Possimus iure ab modi!</p>
+            <button>Show de bola</button>
+        </div>
+    </div>
+    <div>
+        <div card>
+            <h2>Novo Modelo</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem tenetur, quidem, dolorem explicabo quo eaque illum rem nisi, placeat error repellendus natus iste quos libero delectus. Possimus iure ab modi!</p>
+            <button>Show de bola</button>
+        </div>
+    </div>   
+    <div>
+        <div card>
+            <h2>Novo Modelo</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem tenetur, quidem, dolorem explicabo quo eaque illum rem nisi, placeat error repellendus natus iste quos libero delectus. Possimus iure ab modi!</p>
+            <button>Show de bola</button>
+        </div>
+    </div>
+</div>
+```
+
+
+
+
+
