@@ -23,7 +23,7 @@ Cole o link JS antes do fechamento da tag ```<body>```
 - [Dark Mode](#dark-mode)
 
 
-#### Accordion
+### Accordion
 ```html
 <div accordion>
     <div>
@@ -55,10 +55,10 @@ Cole o link JS antes do fechamento da tag ```<body>```
 </div>
 ```
 
-#### Modal
+### Modal
 Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conteúdo e rodapé. Já a segunda opção é direta e mais simples
 
-- Primeira exemplo
+- Primeiro exemplo
 ```html
 <button data-modal="primeira">Abrir Modal</button>
 <div modal="primeira">
@@ -93,7 +93,7 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
 
 
 
-#### Buttons
+### Buttons
 ```html
 <button xsm>button xsm</button>
 <button sm>button sm</button>
@@ -103,7 +103,7 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
 <button xlg>button sm</button>
 ```
 
-#### Container
+### Container
 ```html
 <div container xsm blue-100>
     <h2>container xsm blue-100</h2>
@@ -111,7 +111,7 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
 </div>
 ```
 
-#### Grid
+### Grid
 - A largura das div's filhas serão automáticas ```<div grid>```
 ```html
 <div grid>
@@ -139,13 +139,13 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
 </div>
 ```
 
-#### To Top
+### To Top
 Basta colocar o elemento abaixo e já estará funcionando
 ```html
 <button totop></button>
 ```
 
-#### Dark mode
+### Dark mode
 Basta colocar o elemento abaixo e já estará funcionando incluindo os ícones "moon" e "sun" do framework fontawesome
 ```html
 <button darkmode></button>
