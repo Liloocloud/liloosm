@@ -85,6 +85,9 @@ const lilooSM = {
             document.querySelector('[darkmode]').innerHTML = lilooSM.moon
         }
     }
+
+
+    
 }
 
 // Load
@@ -96,8 +99,27 @@ lilooSM.checkDarkMode()
 // Event's
 document.querySelector('[darkmode]').addEventListener("click", lilooSM.toggleDarkMode)
 
+// Modal
+const modalSelect = document.querySelectorAll("[data-modal]");
+modalSelect.forEach(function(el) {
+    el.addEventListener("click", function() {
+        let item = el.getAttribute("data-modal")   
+        let modal = document.querySelector(`[modal="${item}"]`)
+        modal.classList.add("show")
+        
+        let close = document.querySelector(`[modal="${item}"] > div > [close]`)
+        close.addEventListener("click", () => {
+                modal.classList.remove("show")
+        })
+        
+        window.addEventListener("click", (event) => {
+            if (event.target == modal) {
+                modal.classList.remove("show")
+            }
+        });
 
-
+    })
+})
 
 
 
