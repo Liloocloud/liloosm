@@ -14,8 +14,15 @@ Cole o link JS antes do fechamento da tag ```<body>```
 ## Exemplo
 
 ## Componentes
+- [Accordion](#accordion)
+- [Buttons](#buttons)
+- [Container](#container)
+- [Grid](#grid)
+- [Totop](#to-top)
+- [Dark Mode](#dark-mode)
 
-#### Accordion (Acordeom)
+
+#### Accordion
 ```html
 <div accordion>
     <div>
@@ -47,7 +54,7 @@ Cole o link JS antes do fechamento da tag ```<body>```
 </div>
 ```
 
-#### Buttons (Botões)
+#### Buttons
 ```html
 <button xsm>button xsm</button>
 <button sm>button sm</button>
