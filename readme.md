@@ -16,6 +16,7 @@ Cole o link JS antes do fechamento da tag ```<body>```
 ## Componentes
 - [Accordion](#accordion)
 - [Modal](#modal)
+- [Header](#header)
 - [Buttons](#buttons)
 - [Container](#container)
 - [Grid](#grid)
