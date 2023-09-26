@@ -124,30 +124,45 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
 ```
 
 ### Grid
-- A largura das div's filhas serão automáticas ```<div grid>```
+- Você pode usar ```<div grid>```,```<div grid1>```, ```<div grid2>```, ```<div grid3>```, ```<div grid4>``` ou ```<div grid5>```
+- A largura das div's filhas de ```<div grid>``` serão automáticas  
+- Se você precisa de apenas uma coluna use ```<div grid1>```
+- Para duas ou mais colunas com larguras automaticas use ```<div grid2>``` ao ```<div grid5>```
+- Obs.: você pode usar qualquer elemento filho podendo ser ```<a>```, ```<p>```, ```<div>```, ```<button>``` e etc., que todos os elementos serão ajustados de igual modo o tela. 
 ```html
-<div grid>
+<div grid5>
+    <a href="#" button>
+        <h3>Pipeline / Matriz</h3>
+        <p>Follow Up</p>
+    </a>
     <div>
-        <div card>
-            <h2>Novo Modelo</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem tenetur, quidem, dolorem explicabo quo eaque illum rem nisi, placeat error repellendus natus iste quos libero delectus. Possimus iure ab modi!</p>
-            <button>Show de bola</button>
-        </div>
+        <h3>Oportunidades</h3>
+        <p>Novos Negócios</p>
     </div>
-    <div>
-        <div card>
-            <h2>Novo Modelo</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem tenetur, quidem, dolorem explicabo quo eaque illum rem nisi, placeat error repellendus natus iste quos libero delectus. Possimus iure ab modi!</p>
-            <button>Show de bola</button>
-        </div>
-    </div>   
-    <div>
-        <div card>
-            <h2>Novo Modelo</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem tenetur, quidem, dolorem explicabo quo eaque illum rem nisi, placeat error repellendus natus iste quos libero delectus. Possimus iure ab modi!</p>
-            <button>Show de bola</button>
-        </div>
-    </div>
+    <button>
+        <h3>Agendamento</h3>
+        <p>Reuniões de venda</p>
+    </button>
+    <a href="#" button>
+        <h3>Agendamento</h3>
+        <p>Reuniões de venda</p>
+    </a>
+    <a href="#" button>
+        <h3>Pipeline / Matriz</h3>
+        <p>Follow Up</p>
+    </a>
+    <a href="#" button>
+        <h3>Oportunidades</h3>
+        <p>Novos Negócios</p>
+    </a>
+    <a href="#" button>
+        <h3>Agendamento</h3>
+        <p>Reuniões de venda</p>
+    </a>
+    <a href="#" button>
+        <h3>Agendamento</h3>
+        <p>Reuniões de venda</p>
+    </a>
 </div>
 ```
 
