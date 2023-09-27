@@ -14,6 +14,7 @@ Cole o link JS antes do fechamento da tag ```<body>```
 ## Exemplo
 
 ## Componentes
+- [Logotipo](#logo)
 - [Accordion](#accordion)
 - [Modal](#modal)
 - [Header](#header)
@@ -23,6 +24,14 @@ Cole o link JS antes do fechamento da tag ```<body>```
 - [Totop](#to-top)
 - [Dark Mode](#dark-mode)
 
+### Logo
+- Escolha os logotipos para cada modo
+```html
+<div logo>
+    <img light src="logo-light.png" alt="" width="50%" style="display: none;">
+    <img dark src="logo-dark.png" alt="" width="50%" style="display: none;">
+</div>
+```
 
 ### Accordion
 ```html
@@ -95,6 +104,10 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
 <header id="topo">
     <div data-src="{{ BASE_UPLOADS }}site/future.jpg"></div>
     <div container xsm>
+        <div logo>
+            <img light src="logo-light.png" alt="" width="50%" style="display: none;">
+            <img dark src="logo-dark.png" alt="" width="50%" style="display: none;">
+        </div>
         <h1>Seu site completo com a LilooSM</h1>
         <p>Desempenho e qualidade com regras SEO implementadas. Você foca no resultado e nós na solução. Entre em contato conosco para maiores detalhes</p>
         <div>
@@ -171,7 +184,6 @@ Basta colocar o elemento abaixo e já estará funcionando
 ```html
 <button totop></button>
 ```
-
 ### Dark mode
 Basta colocar o elemento abaixo e já estará funcionando incluindo os ícones "moon" e "sun" do framework fontawesome
 ```html

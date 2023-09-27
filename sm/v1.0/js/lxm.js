@@ -64,25 +64,38 @@ const lilooSM = {
     toggleDarkMode: function(){
         let body = document.body
         let darkModeEnabled = localStorage.getItem("darkModeEnabled") === "true";
+        let logoDark = document.querySelector('[logo] > [dark]')
+        let logoLight = document.querySelector('[logo] > [light]') 
         if (darkModeEnabled) {
             body.classList.remove("dark-mode");
             localStorage.setItem("darkModeEnabled", "false");
             document.querySelector('[darkmode]').innerHTML = lilooSM.moon
+            logoDark.style.display = "none";
+            logoLight.style.display = "block";
+
         } else {
             body.classList.add("dark-mode");
             localStorage.setItem("darkModeEnabled", "true");
             document.querySelector('[darkmode]').innerHTML = lilooSM.sun
+            logoDark.style.display = "block";
+            logoLight.style.display = "none";
         }
     },
 
     // Check darkModeCurrent
     checkDarkMode: function(){
         let darkModeEnabled = localStorage.getItem("darkModeEnabled") === "true";
+        let logoDark = document.querySelector('[logo] > [dark]')
+        let logoLight = document.querySelector('[logo] > [light]') 
         if (darkModeEnabled) {
             document.body.classList.add("dark-mode");
             document.querySelector('[darkmode]').innerHTML = lilooSM.sun
+            logoDark.style.display = "block";
+            logoLight.style.display = "none";
         }else{
             document.querySelector('[darkmode]').innerHTML = lilooSM.moon
+            logoDark.style.display = "none";
+            logoLight.style.display = "block";
         }
     },
 
