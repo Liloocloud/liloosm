@@ -7,32 +7,34 @@ const lilooComp = {
 
     formLogin: function (obj) {
         let el = document.querySelector('form-liloo-login')
-        let action = el.getAttribute("action")
-        let user = el.getAttribute("user")              
-        let html = 
-        `<form>
-            <input type="hidden" name="action" value="${action}">
-            <input type="hidden" name="user" value="${user}">
-            <div>
+        if(le != null){
+            let action = el.getAttribute("action")
+            let user = el.getAttribute("user")              
+            let html = 
+            `<form>
+                <input type="hidden" name="action" value="${action}">
+                <input type="hidden" name="user" value="${user}">
                 <div>
-                    <label for="nome">Nome</label>
-                    <input id="nome" type="text">
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text">
+                    </div>
                 </div>
-            </div>
-            <div>
                 <div>
-                    <label>E-mail</label>
-                    <input type="text">
+                    <div>
+                        <label>E-mail</label>
+                        <input type="text">
+                    </div>
                 </div>
-            </div>
-            <div>
                 <div>
-                    <button>Enviar</button>
+                    <div>
+                        <button>Enviar</button>
+                    </div>
                 </div>
-            </div>
-        </form>
-        `
-        el.innerHTML = obj.before + html + obj.after
+            </form>
+            `
+            el.innerHTML = obj.before + html + obj.after
+        }
     }
 }
 

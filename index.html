@@ -38,15 +38,17 @@
             <div>
                 <h3>CSS</h3>
                 <div group input>
-                    <input id="link-css" type="text" value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://liloo.com.br/liloosm/sm/v1.0/css/style.css&quot;&gt;
-                    ">
+                    <input id="link-css" type="text" value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://liloo.com.br/liloosm/sm/v1.0/css/style.css&quot;&gt;">
                     <button onclick="clipboard('link-css')">Copy</button>
                 </div>
             </div>
             <div>
                 <h3>JS</h3>
                 <div group input>
-                    <input id="link-js" type="text" value="https://liloo.com.br/liloosm/sm/v1.0/js/lxm.js">
+                    <input id="link-js" type="text" value="&lt;script type=&quot;text/javascript&quot; src=&quot;https://liloo.com.br/liloosm/sm/v1.0/js/sm.js&quot;&gt;">
+
+                    
+                    <script type="text/javascript" src="https://liloo.com.br/liloosm/sm/v1.0/js/sm.js"></script>
                     <button onclick="clipboard('link-js')">Copy</button>
                 </div>
             </div>
@@ -54,11 +56,10 @@
         <div container style="margin-top: 35px;">
             <a href="https://github.com/Liloocloud/liloosm" button><i class="fab fa-github"></i> Github</a>
             <a href="http://localhost/lilooSM/example/" button>Exemplo</a>
-
         </div>
     </header>
 
-    <script src="./sm/v1.0/js/lxm.js"></script>
+    <script src="./sm/v1.0/js/sm.js"></script>
     <script>
         function clipboard(el) {
             let content = document.getElementById(el)

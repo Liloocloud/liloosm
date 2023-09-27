@@ -185,9 +185,11 @@ Basta colocar o elemento abaixo e já estará funcionando
 <button totop></button>
 ```
 ### Dark mode
-Basta colocar o elemento abaixo e já estará funcionando incluindo os ícones "moon" e "sun" do framework fontawesome
+Basta colocar o elemento abaixo e já estará funcionando incluindo os ícones "moon" e "sun" do framework fontawesome.
+Você também pode usar a função ```lilooSM.toggleDarkMode()```
 ```html
 <button darkmode></button>
+<button onclick="lilooSM.toggleDarkMode()">Modo</button>
 ```
 
 
