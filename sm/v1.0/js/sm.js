@@ -168,13 +168,13 @@ const lilooSM = {
 
     sendWhatsapp: function () {
         let button = document.querySelector('[whatsapp]')
-        if(button != null){
+        if (button != null) {
             let tel = button.getAttribute('tel') != null ? button.getAttribute('tel') : false
-            let msg = button.getAttribute('msg') != null ? button.getAttribute('msg') : false 
-            let form = button.getAttribute('form') != null ? true : false 
-            
+            let msg = button.getAttribute('msg') != null ? button.getAttribute('msg') : false
+            let form = button.getAttribute('form') != null ? true : false
+
             // Envia o form
-            if(form){
+            if (form) {
                 let modal = document.querySelector(`[modal="whatsapp"]`)
                 modal.classList.add("show")
                 let close = document.querySelector(`[modal="whatsapp"] [close]`)
@@ -182,49 +182,43 @@ const lilooSM = {
                     modal.classList.remove("show")
                 })
 
-            // Envia apenas o whatsapp
-            }else{
+                // Envia apenas o whatsapp
+            } else {
 
             }
         }
         return
     },
 
-    aplicarMascara: function(campos, formato) {
-        campos.forEach(function(campo) {
-            campo.addEventListener('input', function() {
-              var valor = this.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-              var valorFormatado = '';
-              var mascaraIndex = 0;
-        
-              for (var i = 0; i < valor.length && mascaraIndex < formato.length; i++) {
-                var caractereMascara = formato.charAt(mascaraIndex);
-                var caractereValor = valor.charAt(i);
-        
-                // Enquanto o caractere da máscara não for um dígito, continue avançando na máscara
-                while (!/\d/.test(caractereMascara) && mascaraIndex < formato.length) {
-                  valorFormatado += caractereMascara;
-                  mascaraIndex++;
-                  caractereMascara = formato.charAt(mascaraIndex);
+    // Mask Input
+    maskInput: function (campos, formato) {
+        campos.forEach(function (campo) {
+            campo.addEventListener('input', function () {
+                var valor = this.value.replace(/\D/g, '')
+                var valorFormatado = ''
+                var mascaraIndex = 0
+                for (var i = 0; i < valor.length && mascaraIndex < formato.length; i++) {
+                    var caractereMascara = formato.charAt(mascaraIndex)
+                    var caractereValor = valor.charAt(i)
+                    while (!/\d/.test(caractereMascara) && mascaraIndex < formato.length) {
+                        valorFormatado += caractereMascara
+                        mascaraIndex++
+                        caractereMascara = formato.charAt(mascaraIndex)
+                    }
+                    if (/\d/.test(caractereMascara)) {
+                        valorFormatado += caractereValor
+                    } else {
+                        valorFormatado += caractereMascara 
+                    }
+                    mascaraIndex++
                 }
-        
-                // Se o caractere da máscara for um dígito, adicione o próximo dígito do valor
-                if (/\d/.test(caractereMascara)) {
-                  valorFormatado += caractereValor;
-                } else {
-                  valorFormatado += caractereMascara; // Se não for um dígito, adicione o caractere da máscara
-                }
-        
-                mascaraIndex++; // Avance na máscara
-              }
-        
-              this.value = valorFormatado;
-            });
-          });
-      }
-      
+                this.value = valorFormatado
+            })
+        })
+    },
 
-
+    
+    
 }
 
 // Load
@@ -245,43 +239,43 @@ if (whatsapp != null) {
     whatsapp.addEventListener("click", lilooSM.sendWhatsapp)
 }
 
+/**
+ * Maskinputs Nativo
+ */
+lilooSM.maskInput(document.querySelectorAll('[mask-phone]'), '(99) 99999-9999')
+lilooSM.maskInput(document.querySelectorAll('[mask-cpf]'), '999.999.999-99')
+lilooSM.maskInput(document.querySelectorAll('[mask-cnpj]'), '99.999.999/9999-99')
+lilooSM.maskInput(document.querySelectorAll('[mask-cep]'), '99999-999')
 
 
-
-
-var campoTelefone = document.querySelectorAll('[mask-phone]')
-lilooSM.aplicarMascara(campoTelefone, '(99) 99999-9999');
-
-
-// maskinputs
 // Seleciona o campo de telefone
 var campoTelefone = document.getElementById('telefone');
 
 // Adiciona um ouvinte de evento para o evento "input"
-campoTelefone.addEventListener('input', function() {
-  // Remove todos os caracteres não numéricos do valor do campo
-  var telefone = this.value.replace(/\D/g, '');
+campoTelefone.addEventListener('input', function () {
+    // Remove todos os caracteres não numéricos do valor do campo
+    var telefone = this.value.replace(/\D/g, '');
 
-  // Limita o comprimento do número de telefone a 11 dígitos
-  if (telefone.length > 11) {
-    telefone = telefone.slice(0, 11);
-  }
-
-  // Formata o número de telefone em tempo real
-  var formattedTelefone = '';
-  for (var i = 0; i < telefone.length; i++) {
-    if (i === 0) {
-      formattedTelefone += '(' + telefone[i];
-    } else if (i === 2) {
-      formattedTelefone += ') ' + telefone[i];
-    } else if ((i === 6 && telefone.length === 10) || (i === 7 && telefone.length === 11)) {
-      formattedTelefone += '-' + telefone[i];
-    } else {
-      formattedTelefone += telefone[i];
+    // Limita o comprimento do número de telefone a 11 dígitos
+    if (telefone.length > 11) {
+        telefone = telefone.slice(0, 11);
     }
-  }
 
-  this.value = formattedTelefone;
+    // Formata o número de telefone em tempo real
+    var formattedTelefone = '';
+    for (var i = 0; i < telefone.length; i++) {
+        if (i === 0) {
+            formattedTelefone += '(' + telefone[i];
+        } else if (i === 2) {
+            formattedTelefone += ') ' + telefone[i];
+        } else if ((i === 6 && telefone.length === 10) || (i === 7 && telefone.length === 11)) {
+            formattedTelefone += '-' + telefone[i];
+        } else {
+            formattedTelefone += telefone[i];
+        }
+    }
+
+    this.value = formattedTelefone;
 });
 
 

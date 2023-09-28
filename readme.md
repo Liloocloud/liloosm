@@ -24,6 +24,13 @@ Cole o link JS antes do fechamento da tag ```<body>```
 - [Totop](#to-top)
 - [Dark Mode](#dark-mode)
 
+## Recursos
+- [Mask Inputs](#mask-input)
+- [Button Whatsapp](#button-whatsapp)
+
+## Componentes
+<hr>
+
 ### Logo
 - Escolha os logotipos para cada modo
 ```html
@@ -191,6 +198,31 @@ Você também pode usar a função ```lilooSM.toggleDarkMode()```
 <button darkmode></button>
 <button onclick="lilooSM.toggleDarkMode()">Modo</button>
 ```
+
+## Recuros
+<hr>
+
+### Mask Input
+Muito útil para criar entradas realmente lógicas e que auxiliem seu usuário. Basta usar o atributo ```mask-phone``` no seu input que terá a máscara de telefone. Veja a lista de opções
+
+- ```mask-phone``` Formato (99) 99999-9999
+```html
+<input type="text" mask-phone>
+```
+- ```mask-cpf``` Formato 999.999.999-99
+```html
+<input type="text" mask-cpf>
+```
+- ```mask-cnpj``` Formato 99.999.999/9999-99
+```html
+<input type="text" mask-cnpj>
+```
+- ```mask-cep``` Formato 99999-999
+```html
+<input type="text" mask-cep>
+```
+
+
 
 
 
