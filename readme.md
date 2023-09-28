@@ -262,7 +262,7 @@ Muito útil para criar entradas realmente lógicas e que auxiliem seu usuário. 
             </div>           
             <div>
                 <label for="message">Mensagem <span>*</span></label>
-                <textarea name="message" id="message" rows="3" placeholder="Digite seus mensagem" required></textarea>
+                <textarea name="message" id="message" rows="3" placeholder="Digite sua mensagem" required></textarea>
             </div>           
             <button lg><i class="fab fa-whatsapp"></i> Iniciar a conversa</button>
         </form>

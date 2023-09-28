@@ -1,5 +1,10 @@
+# sm
 example/
 sm/scss/
 command.md
 .vscode/
 .gitignore
+
+# smbin
+smbin/vendor/
+smbin/composer.lock
