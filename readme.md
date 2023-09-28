@@ -1,8 +1,7 @@
 # Liloo SM
-
 HTML, CSS e JS framework simplista e minimalista (SM) para auxiliar na construção de estruturas HTML de forma absurdamente rápida
 
-## Instalação
+## 1. Instalação
 Acesse <a href="https://liloo.com.br/liloosm/" target="_blank">Liloo SM Site Oficial</a>
 
 Cole o link CSS antes do fechamento da tag ```<head>```
@@ -11,9 +10,9 @@ Cole o link CSS antes do fechamento da tag ```<head>```
 Cole o link JS antes do fechamento da tag ```<body>```
 <code>https://liloo.com.br/liloosm/sm/v1.0/js/lxm.js</code>
 
-## Exemplo
+<hr>
 
-## Componentes
+## 2. Componentes
 - [Logotipo](#logo)
 - [Accordion](#accordion)
 - [Modal](#modal)
@@ -24,9 +23,10 @@ Cole o link JS antes do fechamento da tag ```<body>```
 - [Totop](#to-top)
 - [Dark Mode](#dark-mode)
 
-## Recursos
+## 3. Recursos
 - [Mask Inputs](#mask-input)
 - [Button Whatsapp](#button-whatsapp)
+
 
 ## Componentes
 <hr>
@@ -39,6 +39,7 @@ Cole o link JS antes do fechamento da tag ```<body>```
     <img dark src="logo-dark.png" alt="" width="50%" style="display: none;">
 </div>
 ```
+<hr>
 
 ### Accordion
 ```html
@@ -71,6 +72,7 @@ Cole o link JS antes do fechamento da tag ```<body>```
     </div>
 </div>
 ```
+<hr>
 
 ### Modal
 Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conteúdo e rodapé. Já a segunda opção é direta e mais simples
@@ -106,6 +108,8 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
     </div>
 </div>
 ```
+<hr>
+
 ### Header
 ```html
 <header id="topo">
@@ -124,6 +128,7 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
     </div>
 </header>
 ```
+<hr>
 
 ### Buttons
 ```html
@@ -134,6 +139,7 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
 <button lg>button sm</button>
 <button xlg>button sm</button>
 ```
+<hr>
 
 ### Container
 ```html
@@ -142,6 +148,7 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore corrupti sequi cum distinctio earum? Magnam numquam, quam praesentium tempore optio nam a culpa fuga similique pariatur aspernatur architecto, eos cumque.</p>   
 </div>
 ```
+<hr>
 
 ### Grid
 - Você pode usar ```<div grid>```,```<div grid1>```, ```<div grid2>```, ```<div grid3>```, ```<div grid4>``` ou ```<div grid5>```
@@ -185,12 +192,15 @@ Temos duas formas diferentes de fazer isso. A primeira possui cabaçalho, conte�
     </a>
 </div>
 ```
+<hr>
 
 ### To Top
 Basta colocar o elemento abaixo e já estará funcionando
 ```html
 <button totop></button>
 ```
+<hr>
+
 ### Dark mode
 Basta colocar o elemento abaixo e já estará funcionando incluindo os ícones "moon" e "sun" do framework fontawesome.
 Você também pode usar a função ```lilooSM.toggleDarkMode()```
@@ -198,6 +208,7 @@ Você também pode usar a função ```lilooSM.toggleDarkMode()```
 <button darkmode></button>
 <button onclick="lilooSM.toggleDarkMode()">Modo</button>
 ```
+<hr>
 
 ## Recuros
 <hr>
@@ -225,8 +236,10 @@ Muito útil para criar entradas realmente lógicas e que auxiliem seu usuário. 
 ```html
 <input type="text" mask-rg>
 ```
+<hr>
+
 ### Button Whatsapp
-É muito comum hoje em dias os sites possuirem botão de contato para o whatsapp, pensando nisso, nossa equipe desenvolveu um recurso muito simples e intuitivo para essa finalidade. Além de enviar a mensagem via link para o seu whatsapp, a script permiti que você inclua um formulário antes do envio das informções. Você tembém vai poder contar com nosso sistema embarcado para disparar e-mail's direto do sua conta de hospedagem. Tudo simples, rápido e fácil!
+É muito comum hoje em dias os sites possuirem botão de contato para o whatsapp, pensando nisso, nossa equipe desenvolveu um recurso muito simples e intuitivo para essa finalidade. Além de enviar a mensagem via link para o seu whatsapp, a script permiti que você inclua um formulário antes do envio das informações. Você também vai poder contar com nosso sistema embarcado para disparar e-mail's direto do sua conta de hospedagem. Tudo simples, rápido e fácil!
 
 - Veja o exemplo de um form + configuração do botão
 ```html
@@ -261,6 +274,8 @@ msg="Olá gostaria de mais informações sobre seus serviços"
 form="true"
 ><i class="fab fa-whatsapp"></i></button>
 ```
+<hr>
+
 
 
 
