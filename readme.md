@@ -221,6 +221,50 @@ Muito útil para criar entradas realmente lógicas e que auxiliem seu usuário. 
 ```html
 <input type="text" mask-cep>
 ```
+- ```mask-rg``` Formato 99.999.999-9
+```html
+<input type="text" mask-rg>
+```
+### Button Whatsapp
+É muito comum hoje em dias os sites possuirem botão de contato para o whatsapp, pensando nisso, nossa equipe desenvolveu um recurso muito simples e intuitivo para essa finalidade. Além de enviar a mensagem via link para o seu whatsapp, a script permiti que você inclua um formulário antes do envio das informções. Você tembém vai poder contar com nosso sistema embarcado para disparar e-mail's direto do sua conta de hospedagem. Tudo simples, rápido e fácil!
+
+- Veja o exemplo de um form + configuração do botão
+```html
+<div modal="whatsapp">
+    <div>
+        <span close>&times;</span>
+        <h2>Modal do whatsapp</h2>
+        <form>
+            <div>
+                <label for="name">Nome <span>*</span></label>
+                <input name="name" id="name" type="text" placeholder="Seu nome" required>
+            </div>
+            <div>
+                <label for="whatsapp">Whatsapp <span>*</span></label>
+                <input name="whatsapp" id="whatsapp" type="text" mask-phone placeholder="(00) 00000-0000" required>
+            </div>
+            <div>
+                <label for="email">E-mail <span>*</span></label>
+                <input name="email" id="email" type="email" placeholder="Seu melhor e-mail">
+            </div>           
+            <div>
+                <label for="message">Mensagem <span>*</span></label>
+                <textarea name="message" id="message" rows="3" placeholder="Digite seus mensagem" required></textarea>
+            </div>           
+            <button lg><i class="fab fa-whatsapp"></i> Iniciar a conversa</button>
+        </form>
+    </div>
+</div>
+<button whatsapp 
+tel="5513981750225"
+msg="Olá gostaria de mais informações sobre seus serviços"
+form="true"
+><i class="fab fa-whatsapp"></i></button>
+```
+
+
+
+
 
 
 

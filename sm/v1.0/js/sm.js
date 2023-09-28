@@ -208,7 +208,7 @@ const lilooSM = {
                     if (/\d/.test(caractereMascara)) {
                         valorFormatado += caractereValor
                     } else {
-                        valorFormatado += caractereMascara 
+                        valorFormatado += caractereMascara
                     }
                     mascaraIndex++
                 }
@@ -217,8 +217,33 @@ const lilooSM = {
         })
     },
 
-    
-    
+    // Maskinput para telefone em dois formatos
+    maskInputPhone: function () {
+        var camposTelefone = document.querySelectorAll('[mask-phone]')
+        camposTelefone.forEach(function (campo) {
+            campo.addEventListener('input', function () {
+                var telefone = this.value.replace(/\D/g, '')
+                if (telefone.length > 11) {
+                    telefone = telefone.slice(0, 11)
+                }
+                var formattedTelefone = ''
+                for (var i = 0; i < telefone.length; i++) {
+                    if (i === 0) {
+                        formattedTelefone += '(' + telefone[i]
+                    } else if (i === 2) {
+                        formattedTelefone += ') ' + telefone[i]
+                    } else if ((i === 6 && telefone.length === 10) || (i === 7 && telefone.length === 11)) {
+                        formattedTelefone += '-' + telefone[i]
+                    } else {
+                        formattedTelefone += telefone[i]
+                    }
+                }
+                this.value = formattedTelefone
+            })
+        })
+    }
+
+
 }
 
 // Load
@@ -233,52 +258,19 @@ const btnMode = document.querySelector('[darkmode]')
 if (btnMode != null) {
     btnMode.addEventListener("click", lilooSM.toggleDarkMode)
 }
-
 const whatsapp = document.querySelector('[whatsapp]')
 if (whatsapp != null) {
     whatsapp.addEventListener("click", lilooSM.sendWhatsapp)
 }
 
 /**
- * Maskinputs Nativo
+ * Maskinputs
  */
-lilooSM.maskInput(document.querySelectorAll('[mask-phone]'), '(99) 99999-9999')
+lilooSM.maskInputPhone()
 lilooSM.maskInput(document.querySelectorAll('[mask-cpf]'), '999.999.999-99')
 lilooSM.maskInput(document.querySelectorAll('[mask-cnpj]'), '99.999.999/9999-99')
+lilooSM.maskInput(document.querySelectorAll('[mask-rg]'), '99.999.999-9')
 lilooSM.maskInput(document.querySelectorAll('[mask-cep]'), '99999-999')
-
-
-// Seleciona o campo de telefone
-var campoTelefone = document.getElementById('telefone');
-
-// Adiciona um ouvinte de evento para o evento "input"
-campoTelefone.addEventListener('input', function () {
-    // Remove todos os caracteres não numéricos do valor do campo
-    var telefone = this.value.replace(/\D/g, '');
-
-    // Limita o comprimento do número de telefone a 11 dígitos
-    if (telefone.length > 11) {
-        telefone = telefone.slice(0, 11);
-    }
-
-    // Formata o número de telefone em tempo real
-    var formattedTelefone = '';
-    for (var i = 0; i < telefone.length; i++) {
-        if (i === 0) {
-            formattedTelefone += '(' + telefone[i];
-        } else if (i === 2) {
-            formattedTelefone += ') ' + telefone[i];
-        } else if ((i === 6 && telefone.length === 10) || (i === 7 && telefone.length === 11)) {
-            formattedTelefone += '-' + telefone[i];
-        } else {
-            formattedTelefone += telefone[i];
-        }
-    }
-
-    this.value = formattedTelefone;
-});
-
-
 
 
 // offcanvas
