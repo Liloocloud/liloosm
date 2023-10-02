@@ -1,4 +1,9 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST");
+header("Access-Control-Allow-Headers: Content-Type");
+
+
 define('__THEME__', [
     'mail_host'		 	=> 'mail.liloo.com.br',
     'mail_port'			=> 465,
