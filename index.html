@@ -50,9 +50,6 @@
                 <h3>JS</h3>
                 <div group input>
                     <input id="link-js" type="text" value="&lt;script type=&quot;text/javascript&quot; src=&quot;https://liloo.com.br/liloosm/sm/v1.0/js/sm.js&quot;&gt;">
-
-                    
-                    <script type="text/javascript" src="https://liloo.com.br/liloosm/sm/v1.0/js/sm.js"></script>
                     <button onclick="clipboard('link-js')">Copy</button>
                 </div>
             </div>
@@ -63,8 +60,56 @@
         </div>
     </header>
 
+    <div modal="whatsapp">
+        <div>
+            <span close>&times;</span>
+            <h2>Modal do whatsapp</h2>
+            <form>
+                <div>
+                    <label for="name">Nome <span>*</span></label>
+                    <input name="name" id="name" type="text" placeholder="Seu nome" required>
+                </div>
+                <div>
+                    <label for="whatsapp">Whatsapp <span>*</span></label>
+                    <input name="whatsapp" id="whatsapp" type="text" mask-phone placeholder="(00) 00000-0000" required>
+                </div>
+                <div>
+                    <label for="email">E-mail <span>*</span></label>
+                    <input name="email" id="email" type="email" placeholder="Seu melhor e-mail">
+                </div>           
+                <div>
+                    <label for="message">Mensagem <span>*</span></label>
+                    <textarea name="message" id="message" rows="3" placeholder="Digite sua mensagem" required></textarea>
+                </div>           
+                <button lg><i class="fab fa-whatsapp"></i> Iniciar a conversa</button>
+            </form>
+        </div>
+    </div>
+    <button whatsapp 
+    tel="5513981750225"
+    msg="Olá gostaria de mais informações sobre seus serviços"
+    form="true"
+    ><i class="fab fa-whatsapp"></i></button>
+
+
     <script src="./sm/v1.0/js/sm.js"></script>
+    <script src="./sm/v1.0/js/request.js"></script>
     <script>
+
+        document.querySelector('[modal="whatsapp"]').addEventListener('submit', function (e) {
+            e.preventDefault()
+            lilooRequest.Form({
+                form: this.querySelector('form'),
+                path: 'http://localhost/lilooSM/smbin/index',
+                action: '',
+                success: function (data) {
+                    console.log(data)
+                }
+            })
+            return false
+        })
+
+
         function clipboard(el) {
             let content = document.getElementById(el)
             content.select()

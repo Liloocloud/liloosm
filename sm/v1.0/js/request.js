@@ -107,24 +107,28 @@ const lilooRequest = {
     /**
      * Envia e formulários serializando os dados e retornando em callback function
      */
-    Form: (Obj) => {
-        let serializeFormToObject = function (form) {
-            var objForm = {};
-            var formData = new FormData(form);
-            for (var key of formData.keys()) {
-                objForm[key] = formData.get(key);
-            }
-            return objForm;
-        };
+    Form: (Obj) => {       
         lilooRequest.Event({
-            action: Obj.form.querySelector('input[name="action"]').value,
-            path: Obj.form.querySelector('input[name="path"]').value,
-            data: JSON.stringify(serializeFormToObject(Obj.form)),
+            action: Obj.action,
+            path: Obj.path, 
+            data: JSON.stringify(lilooRequest.serializeFormToObject(Obj.form)),
             success: function(res){
                 Obj.success(res)
             }
         })
         return false
-    }
+    },
+
+    /**
+     * Serializa as informações do forma para o envio
+     */
+    serializeFormToObject: function (form) {
+        let objForm = {};
+        let formData = new FormData(form);
+        for (let key of formData.keys()) {
+            objForm[key] = formData.get(key);
+        }
+        return objForm;
+    }  
 
 }

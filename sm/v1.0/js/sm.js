@@ -274,31 +274,31 @@ lilooSM.maskInput(document.querySelectorAll('[mask-cep]'), '99999-999')
 
 
 // offcanvas
-document.addEventListener("DOMContentLoaded", function () {
-    const menuIcon = document.getElementById("menu-icon");
-    const offcanvas = document.getElementById("offcanvas");
-    const dropdownToggle = document.querySelectorAll(".dropdown-toggle");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const menuIcon = document.getElementById("menu-icon");
+//     const offcanvas = document.getElementById("offcanvas");
+//     const dropdownToggle = document.querySelectorAll(".dropdown-toggle");
 
-    menuIcon.addEventListener("click", function () {
-        offcanvas.classList.toggle("open");
-    });
+//     menuIcon.addEventListener("click", function () {
+//         offcanvas.classList.toggle("open");
+//     });
 
-    // Evitar o fechamento do menu offcanvas quando um link é clicado
-    offcanvas.addEventListener("click", function (e) {
-        if (e.target.tagName === "A") {
-            e.preventDefault();
-        }
-    });
+//     // Evitar o fechamento do menu offcanvas quando um link é clicado
+//     offcanvas.addEventListener("click", function (e) {
+//         if (e.target.tagName === "A") {
+//             e.preventDefault();
+//         }
+//     });
 
-    // Abrir e fechar dropdowns individualmente
-    dropdownToggle.forEach(toggle => {
-        toggle.addEventListener("click", function (e) {
-            e.preventDefault();
-            const dropdownMenu = this.nextElementSibling;
-            dropdownMenu.classList.toggle("open");
-        });
-    });
-});
+//     // Abrir e fechar dropdowns individualmente
+//     dropdownToggle.forEach(toggle => {
+//         toggle.addEventListener("click", function (e) {
+//             e.preventDefault();
+//             const dropdownMenu = this.nextElementSibling;
+//             dropdownMenu.classList.toggle("open");
+//         });
+//     });
+// });
 
 // navbar: function () {
 //     const menuIcon = document.querySelector(".menu-icon");
