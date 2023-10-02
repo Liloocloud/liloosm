@@ -1,11 +1,11 @@
 <?php
 define('__THEME__', [
-    'mail_host'		 	=> 'mail.kitbusca.com',
+    'mail_host'		 	=> 'mail.liloo.com.br',
     'mail_port'			=> 465,
-    'mail_user'			=> 'useraccount@kitbusca.com',
-    'mail_pass'			=> '5pa3]dxGelqXnq[;s+PNHk]Yj2S9qF=VvU%c',
+    'mail_user'			=> 'suporte@liloo.com.br',
+    'mail_pass'			=> 'iDJn[V=[b[LHG_(7TN!$SupjkgfJj?}~L-n2',
     'mail_from_name' 	=> 'Nova Conta de Usuário',
-    'mail_from_email' 	=> 'useraccount@kitbusca.com', // Recomendado ser o mesno do user
+    'mail_from_email' 	=> 'suporte@liloo.com.br', // Recomendado ser o mesno do user
 ]);
 require_once __DIR__."/vendor/autoload.php";
 use Liloo\Email\Email;
