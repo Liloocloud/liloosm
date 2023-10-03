@@ -30,5 +30,11 @@ if(!empty($Data)){
     );
     $Send = $email->send();
     
-    echo json_encode($Send);
+    $JSON = [
+        'bool' => ($Send)? true : false,
+        'output' => null,
+        'message' => ($Send)? 'Enviado com sucesso!' : 'Não foi possível enviar. Tente novamente.'
+    ];
+
+    echo json_encode($JSON);
 }

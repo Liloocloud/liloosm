@@ -8,3 +8,4 @@ command.md
 # smbin
 smbin/vendor/
 smbin/composer.lock
+smbin/composer.json

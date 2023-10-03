@@ -182,9 +182,9 @@ const lilooSM = {
                     modal.classList.remove("show")
                 })
 
-                // Envia apenas o whatsapp
+            // Envia apenas o whatsapp
             } else {
-
+                
             }
         }
         return
@@ -241,7 +241,8 @@ const lilooSM = {
                 this.value = formattedTelefone
             })
         })
-    }
+    },
+
 
 
 }

@@ -27,30 +27,33 @@
 <body>
 
     <header style="background-color: #1a1a1a;">
-        <div container sm>
+        <div container lg>
             <div logo>
                 <img light src="./logo.png" alt="" width="100px" style="display: none;">
                 <img dark src="./logo.png" alt="" width="100px" style="display: none;">
             </div>
             <h1>Liloo SM</h1>
             <h2>Framework HTML, CSS e JS</h2>
-            <p>Simplista e minimalista (SM) para auxiliar na construção de estruturas HTML de forma absurdamente rápida
+            <p style="margin-bottom: 50px;">Simplista e minimalista (SM) para auxiliar na construção de estruturas HTML de forma absurdamente rápida
             </p>
-        </div>
-        <p class="copiado">Copiado</p>
-        <div grid>
-            <div>
+            <p class="copiado">Copiado</p>
+            <div style="text-align: left;">
                 <h3>CSS</h3>
+                <p>Link padrão</p>
                 <div group input>
                     <input id="link-css" type="text" value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://liloo.com.br/liloosm/sm/v1.0/css/style.css&quot;&gt;">
                     <button onclick="clipboard('link-css')">Copy</button>
                 </div>
-            </div>
-            <div>
                 <h3>JS</h3>
+                <p>Script padrão</p>
                 <div group input>
                     <input id="link-js" type="text" value="&lt;script type=&quot;text/javascript&quot; src=&quot;https://liloo.com.br/liloosm/sm/v1.0/js/sm.js&quot;&gt;">
                     <button onclick="clipboard('link-js')">Copy</button>
+                </div>
+                <p>Script Request</p>
+                <div group input>
+                    <input id="link-request" type="text" value="&lt;script type=&quot;text/javascript&quot; src=&quot;https://liloo.com.br/liloosm/sm/v1.0/js/request.js&quot;&gt;">
+                    <button onclick="clipboard('link-request')">Copy</button>
                 </div>
             </div>
         </div>
@@ -80,6 +83,9 @@
                 <div>
                     <label for="message">Mensagem <span>*</span></label>
                     <textarea name="message" id="message" rows="3" placeholder="Digite sua mensagem" required></textarea>
+                </div>
+                <div alert>
+                    Não foi possível enviar! Tente novamente
                 </div>           
                 <button lg><i class="fab fa-whatsapp"></i> Iniciar a conversa</button>
             </form>
@@ -103,7 +109,9 @@
                 path: 'https://liloo.com.br/liloosm/smbin/index',
                 action: '',
                 success: function (data) {
-                    console.log(data)
+                    let modal = document.querySelector('[modal="whatsapp"]')
+                    // modal.classList.remove("show")
+                    modal.querySelector('[alert]').classList.add('show')
                 }
             })
             return false
