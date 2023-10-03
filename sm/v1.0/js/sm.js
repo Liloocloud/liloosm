@@ -169,8 +169,6 @@ const lilooSM = {
     sendWhatsapp: function () {
         let button = document.querySelector('[whatsapp]')
         if (button != null) {
-            let tel = button.getAttribute('tel') != null ? button.getAttribute('tel') : false
-            let msg = button.getAttribute('msg') != null ? button.getAttribute('msg') : false
             let form = button.getAttribute('form') != null ? true : false
 
             // Envia o form
@@ -184,7 +182,7 @@ const lilooSM = {
 
             // Envia apenas o whatsapp
             } else {
-                
+                // redirecionar para o URL
             }
         }
         return
@@ -207,6 +205,15 @@ const lilooSM = {
                         // modal.classList.remove("show")
                         modal.querySelector('[alert]').classList.add('show', 'success')
                         modal.querySelector('[alert] [message]').innerHTML = res.message
+
+                        // Redireciona para URL passada pelo button
+                        let button = document.querySelector('button[whatsapp]')
+                        let tel = button.getAttribute('tel') != null ? button.getAttribute('tel') : false
+                        let msg = button.getAttribute('msg') != null ? button.getAttribute('msg') : false
+                        let url = button.getAttribute('url') != null ? button.getAttribute('url') : false
+
+                        console.log(tel, msg, url)
+
                         return false
                     } else {
                         modal.querySelector('[alert]').classList.add('show', 'danger')
@@ -288,11 +295,12 @@ lilooSM.toTop()
 lilooSM.openModal()
 lilooSM.modalWhatsapp()
 
-// Event's
+// Darkmode
 const btnMode = document.querySelector('[darkmode]')
 if (btnMode != null) {
     btnMode.addEventListener("click", lilooSM.toggleDarkMode)
 }
+// Button Whatsapp
 const whatsapp = document.querySelector('[whatsapp]')
 if (whatsapp != null) {
     whatsapp.addEventListener("click", lilooSM.sendWhatsapp)

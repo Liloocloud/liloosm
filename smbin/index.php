@@ -33,7 +33,7 @@ if(!empty($Data)){
     $JSON = [
         'bool' => ($Send)? true : false,
         'output' => null,
-        'message' => ($Send)? 'Enviado com sucesso!' : 'Não foi possível enviar. Tente novamente.'
+        'message' => ($Send)? 'Enviado com sucesso! Estamos redirecionand. Aguarde...' : 'Não foi possível enviar. Tente novamente.'
     ];
 
     echo json_encode($JSON);
