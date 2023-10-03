@@ -217,7 +217,6 @@ const lilooSM = {
                         setTimeout(function () {
                             modal.classList.remove("show")
                         }, 2000)
-
                         return false
                     } else {
                         modal.querySelector('[alert]').classList.add('show', 'danger')

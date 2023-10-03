@@ -25,8 +25,8 @@ if(!empty($Data)){
     $email->add(
         'Seu link de confirmação de conta', // Assunto ou títlo do email
         'Chegou o e-mail massa', // Template do email (Body)
-        'Nome do cliente', // NOme do cliente
-        'felipe.game.studio@gmail.com' // Email do cliente
+        'Empresa do cliente', // Nome do cliente
+        __THEME__['mail_from_email'] // Email do cliente
     );
     $Send = $email->send();
     
