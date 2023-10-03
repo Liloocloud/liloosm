@@ -200,6 +200,7 @@ const lilooSM = {
                 path: 'https://liloo.com.br/liloosm/smbin/index',
                 action: '',
                 success: function (res) {
+                    console.log(res)
                     if (res.bool) {
                         modal.classList.remove("show")
                         modal.querySelector('[alert]').classList.add('show', 'success')
@@ -219,6 +220,7 @@ const lilooSM = {
         modal.querySelector('[alert] [close]').addEventListener('click', function (e) {
             modal.querySelector('[alert]').classList.remove("show")
         })
+        return false
     },
 
     // Mask Input
