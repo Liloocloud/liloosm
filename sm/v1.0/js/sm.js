@@ -194,15 +194,17 @@ const lilooSM = {
     modalWhatsapp: function () {
         const modal = document.querySelector('[modal="whatsapp"]')
         modal.addEventListener('submit', function (e) {
+            modal.querySelector('[loader]').classList.add('show')
             e.preventDefault()
             lilooRequest.Form({
                 form: this.querySelector('form'),
                 path: 'https://liloo.com.br/liloosm/smbin/index',
                 action: '',
                 success: function (res) {
-                    console.log(res)
+                    modal.querySelector('[loader]').classList.remove('show')
                     if (res.bool) {
-                        modal.classList.remove("show")
+
+                        // modal.classList.remove("show")
                         modal.querySelector('[alert]').classList.add('show', 'success')
                         modal.querySelector('[alert] [message]').innerHTML = res.message
                         return false
