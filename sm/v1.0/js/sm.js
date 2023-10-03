@@ -202,17 +202,21 @@ const lilooSM = {
                     modal.querySelector('[loader]').classList.remove('show')
                     if (res.bool) {
 
-                        // modal.classList.remove("show")
+                        
                         modal.querySelector('[alert]').classList.add('show', 'success')
                         modal.querySelector('[alert] [message]').innerHTML = res.message
 
                         // Redireciona para URL passada pelo button
                         let button = document.querySelector('button[whatsapp]')
-                        let tel = button.getAttribute('tel') != null ? button.getAttribute('tel') : false
-                        let msg = button.getAttribute('msg') != null ? button.getAttribute('msg') : false
+                        // let tel = button.getAttribute('tel') != null ? button.getAttribute('tel') : false
+                        // let msg = button.getAttribute('msg') != null ? button.getAttribute('msg') : false
                         let url = button.getAttribute('url') != null ? button.getAttribute('url') : false
-
-                        console.log(tel, msg, url)
+                        
+                        // console.log(tel, msg, url)
+                        window.open(url, "_blank")
+                        setTimeout(function () {
+                            modal.classList.remove("show")
+                        }, 2000)
 
                         return false
                     } else {
