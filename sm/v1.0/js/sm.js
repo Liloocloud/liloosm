@@ -204,14 +204,16 @@ const lilooSM = {
                         modal.classList.remove("show")
                         modal.querySelector('[alert]').classList.add('show', 'success')
                         modal.querySelector('[alert] [message]').innerHTML = res.message
+                        return false
                     } else {
                         modal.querySelector('[alert]').classList.add('show', 'danger')
                         modal.querySelector('[alert] [message]').innerHTML = res.message
+                        return false
                     }
                 }
             })
-            modal.querySelector('[alert]').classList.add('show', 'danger')
-            modal.querySelector('[alert] [message]').innerHTML = 'Não foi possivel enviar. Tente novamente.'
+            // modal.querySelector('[alert]').classList.add('show', 'danger')
+            // modal.querySelector('[alert] [message]').innerHTML = 'Não foi possivel enviar. Tente novamente.'
             return false
         })
         modal.querySelector('[alert] [close]').addEventListener('click', function (e) {
