@@ -190,6 +190,35 @@ const lilooSM = {
         return
     },
 
+    // Gerenciamento da janela modal do whatsapp
+    modalWhatsapp: function () {
+        const modal = document.querySelector('[modal="whatsapp"]')
+        modal.addEventListener('submit', function (e) {
+            e.preventDefault()
+            lilooRequest.Form({
+                form: this.querySelector('form'),
+                path: 'https://liloo.com.br/liloosm/smbin/index',
+                action: '',
+                success: function (res) {
+                    if (res.bool) {
+                        modal.classList.remove("show")
+                        modal.querySelector('[alert]').classList.add('show', 'success')
+                        modal.querySelector('[alert] [message]').innerHTML = res.message
+                    } else {
+                        modal.querySelector('[alert]').classList.add('show', 'danger')
+                        modal.querySelector('[alert] [message]').innerHTML = res.message
+                    }
+                }
+            })
+            modal.querySelector('[alert]').classList.add('show', 'danger')
+            modal.querySelector('[alert] [message]').innerHTML = 'Não foi possivel enviar. Tente novamente.'
+            return false
+        })
+        modal.querySelector('[alert] [close]').addEventListener('click', function (e) {
+            modal.querySelector('[alert]').classList.remove("show")
+        })
+    },
+
     // Mask Input
     maskInput: function (campos, formato) {
         campos.forEach(function (campo) {
@@ -243,8 +272,6 @@ const lilooSM = {
         })
     },
 
-
-
 }
 
 // Load
@@ -253,6 +280,7 @@ lilooSM.header()
 lilooSM.checkDarkMode()
 lilooSM.toTop()
 lilooSM.openModal()
+lilooSM.modalWhatsapp()
 
 // Event's
 const btnMode = document.querySelector('[darkmode]')

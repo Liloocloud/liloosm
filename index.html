@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liloo SM - Framework HTML, CSS e Javascript</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="./sm/v1.0/css/style.css">
 </head>
 <style>
@@ -18,6 +18,7 @@
         top: 25px;
         right: 25px;
     }
+
     [logo] img {
         margin: 0 auto 51px auto;
         width: 150px;
@@ -34,25 +35,29 @@
             </div>
             <h1>Liloo SM</h1>
             <h2>Framework HTML, CSS e JS</h2>
-            <p style="margin-bottom: 50px;">Simplista e minimalista (SM) para auxiliar na construção de estruturas HTML de forma absurdamente rápida
+            <p style="margin-bottom: 50px;">Simplista e minimalista (SM) para auxiliar na construção de estruturas HTML
+                de forma absurdamente rápida
             </p>
             <p class="copiado">Copiado</p>
             <div style="text-align: left;">
                 <h3>CSS</h3>
                 <p>Link padrão</p>
                 <div group input>
-                    <input id="link-css" type="text" value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://liloo.com.br/liloosm/sm/v1.0/css/style.css&quot;&gt;">
+                    <input id="link-css" type="text"
+                        value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://liloo.com.br/liloosm/sm/v1.0/css/style.css&quot;&gt;">
                     <button onclick="clipboard('link-css')">Copy</button>
                 </div>
                 <h3>JS</h3>
                 <p>Script padrão</p>
                 <div group input>
-                    <input id="link-js" type="text" value="&lt;script type=&quot;text/javascript&quot; src=&quot;https://liloo.com.br/liloosm/sm/v1.0/js/sm.js&quot;&gt;">
+                    <input id="link-js" type="text"
+                        value="&lt;script type=&quot;text/javascript&quot; src=&quot;https://liloo.com.br/liloosm/sm/v1.0/js/sm.js&quot;&gt;">
                     <button onclick="clipboard('link-js')">Copy</button>
                 </div>
                 <p>Script Request</p>
                 <div group input>
-                    <input id="link-request" type="text" value="&lt;script type=&quot;text/javascript&quot; src=&quot;https://liloo.com.br/liloosm/sm/v1.0/js/request.js&quot;&gt;">
+                    <input id="link-request" type="text"
+                        value="&lt;script type=&quot;text/javascript&quot; src=&quot;https://liloo.com.br/liloosm/sm/v1.0/js/request.js&quot;&gt;">
                     <button onclick="clipboard('link-request')">Copy</button>
                 </div>
             </div>
@@ -79,43 +84,29 @@
                 <div>
                     <label for="email">E-mail <span>*</span></label>
                     <input name="email" id="email" type="email" placeholder="Seu melhor e-mail">
-                </div>           
+                </div>
                 <div>
                     <label for="message">Mensagem <span>*</span></label>
-                    <textarea name="message" id="message" rows="3" placeholder="Digite sua mensagem" required></textarea>
+                    <textarea name="message" id="message" rows="3" placeholder="Digite sua mensagem"
+                        required></textarea>
                 </div>
                 <div alert>
-                    Não foi possível enviar! Tente novamente
-                </div>           
-                <button lg><i class="fab fa-whatsapp"></i> Iniciar a conversa</button>
+                    <span close>&times;</span>
+                    <div message></div>
+                </div>
+                <button lg><i class="fab fa-whatsapp"></i> Enviar e iniciar a conversa</button>
             </form>
         </div>
     </div>
-    <button whatsapp 
-    tel="5513981750225"
-    msg="Olá gostaria de mais informações sobre seus serviços"
-    form="true"
-    ><i class="fab fa-whatsapp"></i></button>
+    <button whatsapp tel="5513981750225" msg="Olá gostaria de mais informações sobre seus serviços" form="true"><i
+            class="fab fa-whatsapp"></i></button>
 
 
     <script src="./sm/v1.0/js/sm.js"></script>
     <script src="./sm/v1.0/js/request.js"></script>
     <script>
 
-        document.querySelector('[modal="whatsapp"]').addEventListener('submit', function (e) {
-            e.preventDefault()
-            lilooRequest.Form({
-                form: this.querySelector('form'),
-                path: 'https://liloo.com.br/liloosm/smbin/index',
-                action: '',
-                success: function (data) {
-                    let modal = document.querySelector('[modal="whatsapp"]')
-                    // modal.classList.remove("show")
-                    modal.querySelector('[alert]').classList.add('show')
-                }
-            })
-            return false
-        })
+        
 
 
         function clipboard(el) {
