@@ -278,6 +278,17 @@ msg="Olá gostaria de mais informações sobre seus serviços"
 form="true"
 ><i class="fab fa-whatsapp"></i></button>
 ```
+Inclua esse script nas páginas que possuem o botão do whatsapp. O script será carregado apenas ná página que você necessita, assim como o monitoramento do botão do Whatsapp
+
+```js
+lilooSM.modalWhatsapp()
+const whatsapp = document.querySelector('[whatsapp]')
+if (whatsapp != null) {
+    whatsapp.addEventListener("click", lilooSM.sendWhatsapp)
+}
+```
+
+
 <hr>
 
 

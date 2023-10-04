@@ -290,13 +290,12 @@ const lilooSM = {
 
 }
 
-// Load
+// Load default
 lilooSM.accordicon()
 lilooSM.header()
 lilooSM.checkDarkMode()
 lilooSM.toTop()
 lilooSM.openModal()
-lilooSM.modalWhatsapp()
 
 // Darkmode
 const btnMode = document.querySelector('[darkmode]')
@@ -304,6 +303,7 @@ if (btnMode != null) {
     btnMode.addEventListener("click", lilooSM.toggleDarkMode)
 }
 // Button Whatsapp
+lilooSM.modalWhatsapp()
 const whatsapp = document.querySelector('[whatsapp]')
 if (whatsapp != null) {
     whatsapp.addEventListener("click", lilooSM.sendWhatsapp)
