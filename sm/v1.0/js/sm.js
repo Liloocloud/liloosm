@@ -302,12 +302,6 @@ const btnMode = document.querySelector('[darkmode]')
 if (btnMode != null) {
     btnMode.addEventListener("click", lilooSM.toggleDarkMode)
 }
-// Button Whatsapp
-lilooSM.modalWhatsapp()
-const whatsapp = document.querySelector('[whatsapp]')
-if (whatsapp != null) {
-    whatsapp.addEventListener("click", lilooSM.sendWhatsapp)
-}
 
 /**
  * Maskinputs

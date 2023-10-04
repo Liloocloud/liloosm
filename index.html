@@ -111,6 +111,11 @@
     <script src="./sm/v1.0/js/sm.js"></script>
     <script src="./sm/v1.0/js/request.js"></script>
     <script>
+        lilooSM.modalWhatsapp()
+        const whatsapp = document.querySelector('[whatsapp]')
+        if (whatsapp != null) {
+            whatsapp.addEventListener("click", lilooSM.sendWhatsapp)
+        }
         function clipboard(el) {
             let content = document.getElementById(el)
             content.select()
